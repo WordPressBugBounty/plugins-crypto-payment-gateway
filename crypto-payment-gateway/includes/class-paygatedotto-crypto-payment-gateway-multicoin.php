@@ -52,6 +52,7 @@ protected $logo_url;
     'xmr'          => sanitize_text_field($this->get_option('multicoin_wallet_xmr')),
     'zec'          => sanitize_text_field($this->get_option('multicoin_wallet_zec')),
     'ton'          => sanitize_text_field($this->get_option('multicoin_wallet_ton')),
+    'xrp'          => sanitize_text_field($this->get_option('multicoin_wallet_xrp')),
 );
 		$this->multicoin_tolerance_percentage = sanitize_text_field($this->get_option('multicoin_tolerance_percentage'));
 		$this->multicoin_custom_domain = paygatedottocryptogateway_sanitize_domain($this->get_option('multicoin_custom_domain'), PAYGATEDOTTOCRYPTOGATEWAY_DEFAULT_CHECKOUT_DOMAIN);
@@ -167,6 +168,12 @@ protected $logo_url;
     'description' => esc_html__('Insert your TON wallet address. Receives both Toncoin and USDT on TON.', 'crypto-payment-gateway'),
     'desc_tip'    => true,
 ),
+'multicoin_wallet_xrp' => array(
+    'title'       => esc_html__('XRP Wallet Address (XRP Ledger)', 'crypto-payment-gateway'),
+    'type'        => 'text',
+    'description' => esc_html__('Insert your XRP Ledger address: r..., r...?dt=TAG to add a destination tag, or an X-address.', 'crypto-payment-gateway'),
+    'desc_tip'    => true,
+),
             'multicoin_tolerance_percentage' => array(
                 'title'       => esc_html__('Underpaid Tolerance', 'crypto-payment-gateway'),
                 'type'        => 'select',
@@ -262,6 +269,7 @@ public function process_admin_options() {
         'multicoin_wallet_xmr',
         'multicoin_wallet_zec',
         'multicoin_wallet_ton',
+        'multicoin_wallet_xrp',
     ];
 
     $has_one_filled = false;
@@ -351,6 +359,10 @@ public function process_admin_options() {
 
     if ( isset( $this->multicoin_wallet_address['ton'] ) && '' !== $this->multicoin_wallet_address['ton'] ) {
         $paygatedottocryptogateway_multicoindecoded_payload['ton'] = $this->multicoin_wallet_address['ton'];
+    }
+
+    if ( isset( $this->multicoin_wallet_address['xrp'] ) && '' !== $this->multicoin_wallet_address['xrp'] ) {
+        $paygatedottocryptogateway_multicoindecoded_payload['xrp'] = $this->multicoin_wallet_address['xrp'];
     }
 		
 			$paygatedottocryptogateway_multicoinjson_payload = json_encode($paygatedottocryptogateway_multicoindecoded_payload);

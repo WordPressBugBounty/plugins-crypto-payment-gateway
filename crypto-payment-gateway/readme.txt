@@ -3,11 +3,11 @@ Contributors: paygatedotto
 Donate link: https://paygate.to/
 Tags: woocommerce,payment,crypto,gateway
 Requires at least: 5.8
-Tested up to: 7.1.3
-Stable tag: 1.2.2
+Tested up to: 7.1
+Stable tag: 1.2.3
 Requires PHP: 7.2
 WC requires at least: 5.8
-WC tested up to: 11.2.1
+WC tested up to: 11.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,14 +26,14 @@ Accept crypto payments directly on your WooCommerce website, each order is assig
 * QR code shown on your own site for easy customer payments.
 * Automatic payment detection.
 * If the customer made a mistake sending to the wrong token or sending through the wrong network our system will still forward the crypto to you automatically for all supported tokens across all chains.
-* 1.5% flat rate fee + blockchain fees.
+* 1% flat rate fee + blockchain fees.
 * Automatic order processing (order will be marked as paid automatically after payment).
 * Track TXID and payouts from wp-admin
 * You can accept payments worldwide without restrictions due to the decentralized nature of how cryptocurrencies work.
 * Please check our website for the minimum transaction amount for each cryptocurrency.
 * Crypto icons on checkout page and QR code.
 * Multi-currency support.
-* Supported networks: BTC - BCH - Monero (XMR) - Zcash (ZEC) - LTC - doge - ETH - PYUSD - TRC20 - ERC20 - BEP20 - Arbitrum - Polygon - AVAX-C - Optimism - Base - Solana - Monad - Linea [check the full list of supported coins and minimum order value per coin](https://paygate.to/crypto-payment-gateway-no-kyc-instant-payouts/#minimumorder).
+* Supported networks: BTC - BCH - Monero (XMR) - Zcash (ZEC) - LTC - doge - ETH - PYUSD - TRC20 - ERC20 - BEP20 - Arbitrum - Polygon - AVAX-C - Optimism - Base - Solana - Monad - Linea - XRP Ledger [check the full list of supported coins and minimum order value per coin](https://paygate.to/crypto-payment-gateway-no-kyc-instant-payouts/#minimumorder).
 * Optional hosted multi-coin mode to enable all cryptocurrencies at one enabled payment method with custom domain name option support.
 * Use your own custom domain name for all API calls (optional feature).
 
@@ -83,6 +83,10 @@ Our plugin is tested to mark orders as processing automatically after payment. Y
 4. screenshot-4.png
 
 == Changelog ==
+
+= V1.2.3 =
+
+* Added: native XRP on the XRP Ledger. In the multi-coin mode, add your XRP wallet as r..., r...?dt=TAG with a destination tag, or an X-address. In the single coin mode, XRP appears in the coin list.
 
 = V1.2.2 =
 
